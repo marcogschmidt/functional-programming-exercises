@@ -1,8 +1,6 @@
-package training
-
 import training.Chapter2._
 
-object Main extends App {
+object Tests {
 
 
   // Test currying
@@ -10,7 +8,7 @@ object Main extends App {
     a + b
   }
 
-  val curriedSum = curry(sum)
+  val curriedSum: Int => Int => Int = curry(sum)
   val increment = curriedSum(1)
 
   var x = increment(5)
@@ -18,12 +16,12 @@ object Main extends App {
 
   println(x)
 
-  // Test uncurrying
+  // Test un-currying
   def double(a: Int): Int => Int = {
-    (i: Int) => i * a
+    i: Int => i * a
   }
 
-  val unc = uncurry(double)
+  val unc: (Int, Int) => Int = uncurry(double)
 
   println(unc(3, 4))
 
