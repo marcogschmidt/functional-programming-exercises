@@ -1,6 +1,6 @@
 package training
 
-object Chapter2 extends App {
+object Chapter2 {
 
   /**
     * Exercise 2.1
@@ -47,7 +47,7 @@ object Chapter2 extends App {
     * Reverse then transformation applied by the above function.
     */
   def uncurry[A, B, C](f: A => B => C): (A, B) => C = {
-    (a: A, b: B)=> f(a)(b)
+    (a: A, b: B) => f(a)(b)
   }
 
   /**
